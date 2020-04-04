@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:orientation="vertical"
     android:theme="@style/AppTheme.Red"
-    android:layout_margin="@dimen/margin_default">
-
-
+    >
     <include
+        android:id="@+id/iLoginLogo"
         layout="@layout/merge_logo"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
-
+        android:layout_width="wrap_content"
+        />
+    <Space
+        android:id="@+id/sLoginLogo"
+        android:layout_width="@dimen/width_logo"
+        android:layout_height="@dimen/height_logo"
+        />
     <EditText
         android:id="@+id/etLoginUsername"
         style="@style/AppTheme.EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/sLoginLogo"
         android:drawableStart="@drawable/vector_person"
         android:hint="@string/hint_usuario" />
 
@@ -29,18 +33,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/vector_lock"
-        android:hint="@string/hint_password" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
+        android:hint="@string/hint_password"
+        android:layout_below="@id/etLoginUsername"/>
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:text="@string/button_login"
-
+        android:layout_alignParentBottom="true"
         />
-</LinearLayout>
+</RelativeLayout>
