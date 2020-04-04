@@ -1,46 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:orientation="vertical"
-    android:theme="@style/AppTheme.Red"
-    android:layout_margin="@dimen/margin_default">
+    android:layout_margin="@dimen/margin_default"
+    >
 
 
-    <include
-        layout="@layout/merge_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
-
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/ivLoginLogo"
+        android:layout_width="@dimen/width_logo"
+        android:layout_height="@dimen/height_logo"
+        android:src="@drawable/logo" />
     <EditText
         android:id="@+id/etLoginUsername"
-        style="@style/AppTheme.EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
         android:drawableStart="@drawable/vector_person"
         android:hint="@string/hint_usuario" />
 
     <EditText
         android:id="@+id/editText"
-        style="@style/AppTheme.EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
         android:drawableStart="@drawable/vector_lock"
         android:hint="@string/hint_password" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
+
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:background="@color/colorPrimary"
-        android:text="@string/button_login"
-
-        />
-</LinearLayout>
+        android:text="@string/button_login" />
+</FrameLayout>
